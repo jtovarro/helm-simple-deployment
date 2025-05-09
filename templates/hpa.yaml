@@ -1,16 +1,15 @@
----
 kind: HorizontalPodAutoscaler
 apiVersion: autoscaling/v2
 metadata:
-  name: tst-0008
-  namespace: tenant-a
+  name: hpa-tst0008-{{ $.Values.tenant.name }}
+  namespace: {{ $.Values.tenant.name }}
 spec:
   scaleTargetRef:
     kind: Deployment
-    name: tst-0008
+    name: tst-0008-{{ $.Values.tenant.name }}
     apiVersion: apps/v1
   minReplicas: 1
-  maxReplicas: 2
+  maxReplicas: 3
   metrics:
     - type: Resource
       resource:

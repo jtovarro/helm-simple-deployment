@@ -4,3 +4,8 @@ This repository contains all definitions to create a simple tenant with a deploy
   
   - Deployment
   - HPA
+
+
+Author:
+
+Juan Carlos Tovar @RedHat

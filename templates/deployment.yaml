@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tst-0008-{{ $.Values.tenant.name }}
+  name: deployment-{{ $.Values.tenant.name }}
   namespace: {{ $.Values.tenant.name }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: tst-0008-{{ $.Values.tenant.name }}
+      app: deployment-{{ $.Values.tenant.name }}
   template:
     metadata:
       labels:
-        app: tst-0008-{{ $.Values.tenant.name }}
+        app: deployment-{{ $.Values.tenant.name }}
     spec:
       containers:
         - name: container-{{ $.Values.tenant.name }}
